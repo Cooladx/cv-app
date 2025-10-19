@@ -1,13 +1,52 @@
+import { useState } from "react";
 import "./App.css";
+
+import type { EducationData } from "./components/educationalExperience/education.tsx";
+import type { ContactData } from "./components/contactInfo/contact.tsx";
 
 // Component imports
 import Form from "./components/form/form.tsx";
+import Editbutton from "./components/finish/edit.tsx";
+import Submission from "./components/form/submission.tsx";
+
 function App() {
+  const [education, setEducations] = useState<EducationData[]>([
+    { school: "", study: "", from: "", to: "" },
+  ]);
+
+  const [contact, setContact] = useState<ContactData>({
+    name: "",
+    email: "",
+    phone: "",
+  });
+
+  // Can only be true or false. True is by default and shows form component.
+  // False will show the output of whatever the user entered in the form with an edit button.
+  const [formVisability, setFormVisability] = useState<boolean>(true);
+
   return (
     <>
-      {/* A form to structure 3 sections for a user. 
-    One for general info, educational experience, and practical experience.  */}
-      <Form />
+      {/* Conditional render to show the form. Starting true by default. */}
+      {formVisability && (
+        /* A form to structure 3 sections for a user. 
+          One for general info, educational experience, and practical experience.  
+      */
+        <Form
+          contact={contact}
+          setContact={setContact}
+          education={education}
+          setEducations={setEducations}
+          setFormVisability={setFormVisability}
+        />
+      )}
+      {/* Conditional render to show form again when clicking on edit button to edit form. */}
+      {!formVisability && (
+        <>
+        <Submission contact={contact}/>
+        <Editbutton setFormVisability={setFormVisability} contact={contact} />
+        </>
+      )}
+      
     </>
   );
 }
