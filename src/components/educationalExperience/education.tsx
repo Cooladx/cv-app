@@ -19,10 +19,7 @@ export default function Education({
   setEducations: React.Dispatch<React.SetStateAction<EducationData[]>>;
   index: number;
 }) {
-  const [school, setSchool] = useState("");
-  const [study, setStudy] = useState("");
-  const [from, setFrom] = useState("");
-  const [to, setTo] = useState("");
+
 
   function addEducation() {
     setEducations((prev) => {
@@ -58,10 +55,12 @@ export default function Education({
               }),
             )
           }
+          value={education.school}
           type="text"
           className="education-input"
           placeholder="[placeholder] College"
         />
+
         <label htmlFor="email">Enter your title of study:</label>
         <input
           onChange={(e) =>
@@ -78,6 +77,7 @@ export default function Education({
               }),
             )
           }
+          value={education.study}
           type="text"
           className="education-input"
           placeholder="Degree concentration"
@@ -102,6 +102,7 @@ export default function Education({
                 }),
               )
             }
+            value={education.from}
             type="date"
             className="profession-input"
           />
@@ -122,6 +123,7 @@ export default function Education({
                 }),
               )
             }
+            value={education.to}
             type="date"
             className="profession-input"
           />
