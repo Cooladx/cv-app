@@ -1,4 +1,4 @@
-import "../../styles/contact.css";
+import "./contact.css";
 import Separator from "../line/separator.tsx";
 
 export type ContactData = {
@@ -60,7 +60,7 @@ export default function Contact({
           }}
           value={contact.phone}
         />
-        <Separator />
+        <Separator width={400}/>
       </section>
     </>
   );

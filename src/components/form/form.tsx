@@ -3,7 +3,7 @@ import Contact from "../contactInfo/contact.tsx";
 import Education from "../educationalExperience/education.tsx";
 import Profession from "../professionalExperience/profession.tsx";
 import Finish from "../finish/finish.tsx";
-import "../../styles/form.css";
+import "./form.css";
 import type { EducationData } from "../educationalExperience/education";
 import type { ContactData } from "../contactInfo/contact.tsx";
 import type { professionData } from "../professionalExperience/profession.tsx";

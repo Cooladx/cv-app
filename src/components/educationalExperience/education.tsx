@@ -1,4 +1,4 @@
-import "../../styles/education.css";
+import "./education.css";
 import Separator from "../line/separator.tsx";
 
 export type EducationData = {
@@ -139,7 +139,7 @@ export default function Education({
           </button>
         )}
 
-        <Separator />
+        <Separator width={300}/>
       </section>
     </>
   );

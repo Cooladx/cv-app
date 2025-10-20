@@ -1,4 +1,4 @@
-import "../../styles/profession.css";
+import "./profession.css";
 import Separator from "../line/separator.tsx";
 
 export type professionData = {

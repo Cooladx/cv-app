@@ -1,8 +1,10 @@
-import "./style.css";
+import "./submission.css";
 
 import type { ContactData } from "../contactInfo/contact";
 import type { EducationData } from "../educationalExperience/education";
 import type { professionData } from "../professionalExperience/profession";
+
+import Separator from "../line/separator";
 
 export default function Submission({
   contact,
@@ -18,9 +20,12 @@ export default function Submission({
       <div className="general-info">
         <h2 className="summary">Preview & Summary</h2>
         <ContactInfo contact={contact} />
+        <Separator height={5} width={600}/>
         <EducationInfo education={education} />
+          <Separator height={5} width={600}/>
         <ProfessionInfo profession={profession}/>
-        <Downloadbtn />
+          <Separator height={5} width={600}/>
+       
       </div>
     </>
   );
@@ -101,29 +106,3 @@ function ProfessionInfo({ profession }: { profession: professionData[] }) {
   );
 }
 
-
-function Downloadbtn() {
-  return (
-    <button
-      type="button"
-      className="download-btn"
-      onClick={() => window.print()}
-    >
-      Download as PDF
-    </button>
-  );
-}
-
-// function Downloadbtn () {
-//     const downloadBtn = document.querySelector(".download-btn")
-//     if(downloadBtn)
-//     downloadBtn.addEventListener("click", () => {
-//         print()
-//     })
-
-//     return (
-//         <>
-//         <button type="button" className=".download-btn">Download as PDF</button>
-//         </>
-//     )
-// }

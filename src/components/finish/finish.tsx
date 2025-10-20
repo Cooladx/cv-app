@@ -1,11 +1,24 @@
-import "../../styles/finish.css";
+import "./finish.css";
+import type { ContactData } from "../contactInfo/contact";
 import type { EducationData } from "../educationalExperience/education";
-
-export default function Finish({ education }: { education: EducationData[] }) {
+import type { professionData } from "../professionalExperience/profession";
+// import Editbutton from "./edit";
+export default function Finish({
+  education,
+  profession,
+  contact,
+  setFormVisability,
+}: {
+  education: EducationData[];
+  profession: professionData[];
+  contact: ContactData;
+  setFormVisability: React.Dispatch<React.SetStateAction<boolean>>;
+}) {
   function handleClick() {
-    console.log(education);
-    document.body.textContent = ""
-    document.body.textContent = education[0].study
+    // console.log(contact);
+    // console.log(education);
+    console.log(profession);
+    setFormVisability(false);
   }
 
   return (
@@ -14,7 +27,6 @@ export default function Finish({ education }: { education: EducationData[] }) {
         <button type="button" onClick={handleClick}>
           Submit
         </button>
-        <button type="button">Edit</button>
       </section>
     </>
   );

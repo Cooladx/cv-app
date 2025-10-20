@@ -9,7 +9,7 @@ export default function Separator({
         backgroundColor: color,
         height: `${height}rem`,
         border: "none",
-        width: `${width}px`,
+        maxWidth: `${width}px`,
       }}
     />
   );
