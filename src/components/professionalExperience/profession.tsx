@@ -42,7 +42,7 @@ export default function Profession({
     // Set education array to remove element and make it a new array.
     setProfessions((prev) => {
       console.log(prev);
-      return prev.filter((item, i) => i !== index); // Keep everyother item except index that is deleted in array
+      return prev.filter((_, i) => i !== index); // Keep everyother item except index that is deleted in array
     });
   }
 
