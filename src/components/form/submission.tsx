@@ -20,11 +20,11 @@ export default function Submission({
       <div className="general-info">
         <h2 className="summary">Preview & Summary</h2>
         <ContactInfo contact={contact} />
-        <Separator height={5} width={600}/>
+        <Separator height={5} width={1600}/>
         <EducationInfo education={education} />
-          <Separator height={5} width={600}/>
+          <Separator height={5} width={1600}/>
         <ProfessionInfo profession={profession}/>
-          <Separator height={5} width={600}/>
+          <Separator height={5} width={1600}/>
        
       </div>
     </>
@@ -44,7 +44,7 @@ function ContactInfo({ contact }: { contact: ContactData }) {
           <span className="CV-identifer-item">Email:</span> {contact.email}
         </div>
         <div className="contact-item">
-          <span className="CV-identifer-item">Phone Number:</span>
+          <span className="CV-identifer-item">Phone Number: </span>
           {contact.phone}
         </div>
       </div>
