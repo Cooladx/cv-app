@@ -16,7 +16,7 @@ function App() {
     email: "",
     phone: "",
   });
-  
+
   const [education, setEducations] = useState<EducationData[]>([
     { school: "", study: "", from: "", to: "" },
   ]);
@@ -51,7 +51,7 @@ function App() {
       {/* Conditional render to show form again when clicking on edit button to edit form. */}
       {!formVisability && (
         <>
-          <Submission contact={contact} education={education} />
+          <Submission contact={contact} education={education} profession={profession} />
           <Editbutton setFormVisability={setFormVisability} contact={contact} />
         </>
       )}
