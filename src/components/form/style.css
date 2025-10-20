@@ -1,0 +1,33 @@
+/* General info */
+.general-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+/* Title of summary page */
+.summary {
+  font-size: 4rem;
+}
+
+.contact-box {
+  font-size: 3rem;
+}
+
+.CV-identifer-item {
+  font-weight: bold;
+}
+
+/* Education section of submission.tsx */
+.education-box {
+  font-size: 3rem;
+}
+
+.education-item {
+  margin-top: 2rem;
+}
+
+@media print {
+
+}
