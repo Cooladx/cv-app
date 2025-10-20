@@ -2,13 +2,16 @@ import "./style.css";
 
 import type { ContactData } from "../contactInfo/contact";
 import type { EducationData } from "../educationalExperience/education";
+import type { professionData } from "../professionalExperience/profession";
 
 export default function Submission({
   contact,
   education,
+  profession
 }: {
   contact: ContactData;
   education: EducationData[];
+  profession: professionData[];
 }) {
   return (
     <>
@@ -16,6 +19,7 @@ export default function Submission({
         <h2 className="summary">Preview & Summary</h2>
         <ContactInfo contact={contact} />
         <EducationInfo education={education} />
+        <ProfessionInfo profession={profession}/>
         <Downloadbtn />
       </div>
     </>
@@ -54,12 +58,10 @@ function EducationInfo({ education }: { education: EducationData[] }) {
               <span className="CV-identifer-item">School: </span> {edu.school}
             </div>
             <div className="study">
-              {" "}
               <span className="CV-identifer-item">Study: </span>
               {edu.study}
             </div>
             <div className="dates">
-              {" "}
               <span className="CV-identifer-item">Date: </span>
               {edu.from} — {edu.to || "—"}
             </div>
@@ -69,6 +71,36 @@ function EducationInfo({ education }: { education: EducationData[] }) {
     </>
   );
 }
+
+function ProfessionInfo({ profession }: { profession: professionData[] }) {
+  return (
+    <>
+      <div className="education-box">
+        <h2>Profession Info</h2>
+        {profession.map((edu, i) => (
+          <div key={i} className="education-item">
+            <div className="company">
+              <span className="CV-identifer-item">Company: </span> {edu.company}
+            </div>
+            <div className="title">
+              <span className="CV-identifer-item">Title: </span>
+              {edu.title}
+            </div>
+             <div className="responsiblities">
+              <span className="CV-identifer-item">Responsiblities: </span>
+              {edu.responsiblities}
+            </div>
+            <div className="dates">
+              <span className="CV-identifer-item">Date: </span>
+              {edu.from} — {edu.to || "—"}
+            </div>
+          </div>
+        ))}
+      </div>
+    </>
+  );
+}
+
 
 function Downloadbtn() {
   return (
