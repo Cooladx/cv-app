@@ -3,22 +3,29 @@ import "./App.css";
 
 import type { EducationData } from "./components/educationalExperience/education.tsx";
 import type { ContactData } from "./components/contactInfo/contact.tsx";
-
+import type { professionData } from "./components/professionalExperience/profession.tsx";
 // Component imports
 import Form from "./components/form/form.tsx";
 import Editbutton from "./components/finish/edit.tsx";
 import Submission from "./components/form/submission.tsx";
 
 function App() {
-  const [education, setEducations] = useState<EducationData[]>([
-    { school: "", study: "", from: "", to: "" },
-  ]);
 
-  const [contact, setContact] = useState<ContactData>({
+    const [contact, setContact] = useState<ContactData>({
     name: "",
     email: "",
     phone: "",
   });
+  
+  const [education, setEducations] = useState<EducationData[]>([
+    { school: "", study: "", from: "", to: "" },
+  ]);
+
+  const [profession, setProfessions] = useState<professionData[]>([
+    { company: "", title: "", responsiblities: "", from: "", to: "" },
+  ]);
+
+
 
   // Can only be true or false. True is by default and shows form component.
   // False will show the output of whatever the user entered in the form with an edit button.
@@ -36,17 +43,18 @@ function App() {
           setContact={setContact}
           education={education}
           setEducations={setEducations}
+          profession={profession}
+          setProfessions={setProfessions}
           setFormVisability={setFormVisability}
         />
       )}
       {/* Conditional render to show form again when clicking on edit button to edit form. */}
       {!formVisability && (
         <>
-        <Submission contact={contact}/>
-        <Editbutton setFormVisability={setFormVisability} contact={contact} />
+          <Submission contact={contact} education={education} />
+          <Editbutton setFormVisability={setFormVisability} contact={contact} />
         </>
       )}
-      
     </>
   );
 }
