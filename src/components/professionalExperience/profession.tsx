@@ -95,8 +95,8 @@ export default function Profession({
               prev.map((item, i) => {
                 if (i === index) {
                   // Only to CHANGE 1 property: school
-                  // If this is the index in the array of education, take changed value in the object and change.
-                  return { ...item, responsibilities: e.target.value };
+                  // If this is the index in the array of profession, take changed value in the object and change.
+                  return { ...item, responsiblities: e.target.value };
                 } else {
                   // If not returned, just leave as is for map has to return something
                   return item;
@@ -120,7 +120,7 @@ export default function Profession({
                 prev.map((item, i) => {
                   if (i === index) {
                     // Only to CHANGE 1 property: school
-                    // If this is the index in the array of education, take changed value in the object and change.
+                    // If this is the index in the array of profession, take changed value in the object and change.
                     return { ...item, from: e.target.value };
                   } else {
                     // If not returned, just leave as is for map has to return something
@@ -141,7 +141,7 @@ export default function Profession({
                 prev.map((item, i) => {
                   if (i === index) {
                     // Only to CHANGE 1 property: school
-                    // If this is the index in the array of education, take changed value in the object and change.
+                    // If this is the index in the array of profession, take changed value in the object and change.
                     return { ...item, to: e.target.value };
                   } else {
                     // If not returned, just leave as is for map has to return something
