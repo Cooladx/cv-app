@@ -1,12 +1,14 @@
 import "./contact.css";
 import Separator from "../line/separator.tsx";
 
+// Creating type to enforce for contact section.
 export type ContactData = {
   name: string;
   email: string;
   phone: string;
 };
 
+// Component to create contact section on component form. 
 export default function Contact({
   contact,
   setContact,

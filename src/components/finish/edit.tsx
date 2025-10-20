@@ -1,5 +1,6 @@
 import type { ContactData } from "../contactInfo/contact";
 
+// Button component to be able to take you back to the form to let you edit your input boxes.
 export default function Editbutton({
   contact,
   setFormVisability,

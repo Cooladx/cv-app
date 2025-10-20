@@ -9,18 +9,24 @@ import Form from "./components/form/form.tsx";
 import Editbutton from "./components/finish/edit.tsx";
 import Submission from "./components/form/submission.tsx";
 
+// Function to populate the app with the form and have the ability to switch to the submission page.
 function App() {
 
+  // State for contact section on form. Only need to initalize as object.
     const [contact, setContact] = useState<ContactData>({
     name: "",
     email: "",
     phone: "",
   });
 
+    // State for education section on form. Only need to initalize as object
+    // but ensure it is in array to be able to add more objects.
   const [education, setEducations] = useState<EducationData[]>([
     { school: "", study: "", from: "", to: "" },
   ]);
 
+     // State for profession section on form. Only need to initalize as object
+    // but ensure it is in array to be able to add more objects.
   const [profession, setProfessions] = useState<professionData[]>([
     { company: "", title: "", responsiblities: "", from: "", to: "" },
   ]);

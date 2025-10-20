@@ -1,6 +1,8 @@
 import "./profession.css";
 import Separator from "../line/separator.tsx";
 
+
+// Types defined for professionData
 export type professionData = {
   company: string;
   title: string;
@@ -9,6 +11,8 @@ export type professionData = {
   to: string;
 };
 
+// Component to create a profession section on the form. 
+// Also to be able to create many form sections of profession.
 export default function Profession({
   
   profession,
@@ -19,6 +23,9 @@ export default function Profession({
   setProfessions: React.Dispatch<React.SetStateAction<professionData[]>>;
   index: number;
 }) {
+
+  // Function to add profession section to the array as an object.
+  // This will be added to an array of objects.
   function addProfession() {
     setProfessions((prev) => {
       console.log(prev);
@@ -29,6 +36,8 @@ export default function Profession({
     });
   }
 
+  // Function to remove profession section to the array as an object.
+  // This will be removed from an array of objects.
   function removeProfession() {
     // Set education array to remove element and make it a new array.
     setProfessions((prev) => {

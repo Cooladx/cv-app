@@ -8,6 +8,10 @@ export type EducationData = {
   to: string;
 };
 
+
+// Component to build the education section on the form. 
+// Will also allow user to create more education sections and remove if needed.
+
 export default function Education({
   education,
   setEducations,

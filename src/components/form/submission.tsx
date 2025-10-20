@@ -1,11 +1,14 @@
 import "./submission.css";
 
+// import types.
 import type { ContactData } from "../contactInfo/contact";
 import type { EducationData } from "../educationalExperience/education";
 import type { professionData } from "../professionalExperience/profession";
 
 import Separator from "../line/separator";
 
+
+// Component to render the submission page. Will contain everything the user has entered on the form.
 export default function Submission({
   contact,
   education,
@@ -31,6 +34,7 @@ export default function Submission({
   );
 }
 
+// Component to build the contact box from the form page.
 function ContactInfo({ contact }: { contact: ContactData }) {
   return (
     <>
@@ -51,7 +55,7 @@ function ContactInfo({ contact }: { contact: ContactData }) {
     </>
   );
 }
-
+// Component to build the Education box from the form page.
 function EducationInfo({ education }: { education: EducationData[] }) {
   return (
     <>
@@ -77,6 +81,7 @@ function EducationInfo({ education }: { education: EducationData[] }) {
   );
 }
 
+// Component to build the Profession box from the form page.
 function ProfessionInfo({ profession }: { profession: professionData[] }) {
   return (
     <>
