@@ -1,7 +1,5 @@
 import "../../styles/education.css";
 import Separator from "../line/separator.tsx";
-// import Button from "../button/button.tsx";
-import { useState } from "react";
 
 export type EducationData = {
   school: string;
@@ -19,8 +17,6 @@ export default function Education({
   setEducations: React.Dispatch<React.SetStateAction<EducationData[]>>;
   index: number;
 }) {
-
-
   function addEducation() {
     setEducations((prev) => {
       console.log(prev);
